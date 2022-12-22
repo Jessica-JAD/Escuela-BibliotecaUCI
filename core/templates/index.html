@@ -1,0 +1,55 @@
+{% extends "layouts/cp_Principal.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}	
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+    <div class="pcoded-wrapper container">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <!-- [ horizontal-layout ] start -->
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body ">
+                                        <video style="width:970px;max-width:150%;text-align: center" controls>
+                                            <source src="../static/assets/images/video.mp4" type="video/mp4">
+                                            <source src="../static/assets/images/video.ogg" type="video/ogg">
+                                        </video>
+                                        <!--Akiva texto de la pagina principal-->
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- [ Main Content ] end -->
+
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Apex Chart -->
+    <script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+    <!-- custom-chart js -->
+    <script src="/static/assets/js/pages/dashboard-main.js"></script>
+
+{% endblock javascripts %}

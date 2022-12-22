@@ -1,0 +1,43 @@
+{% extends "layouts/cp_Principal.html" %}
+{% load crispy_forms_tags %}
+{% block title %}{% endblock %}
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content %}
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-content">
+            <!-- [ Main Content ] start -->
+            <div class="row">
+                <!-- [ sample-page ] start -->
+                <div class="col-sm-12">
+                    <div class="card">
+                                <div class="card-block">
+                                    <form method="post">
+                                            {% csrf_token %}
+                                            <div class="card-body">
+                                                <div class="alert alert-danger">
+                                                    <strong>Cuidado!</strong>
+                                                    <br>
+                                                    Estas seguro de eliminar el registro {{ object.id }}.
+                                                    <br>
+                                                    <p><strong>No. </strong>{{ object.id}} <strong>y Nombre: </strong> {{ object.nombrecliente }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <input type="submit" class="btn btn-warning" value="Eliminar">
+                                                <a href="{% url 'listarreporteprestamo' %}" class="btn btn-danger">Cancelar</a>
+                                            </div>
+                                        </form>
+                                </div>
+                            </div>
+                </div>
+                <!-- [ sample-page ] end -->
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+{% endblock content %}
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

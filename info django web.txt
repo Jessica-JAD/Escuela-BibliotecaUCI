@@ -1,0 +1,48 @@
+*****************
+la consola se abre pulsando window+R y introduciendo comando cmd
+*****************
+para crear el proyecto tienes que ubicar la consola en donde quieras crearlo que son con los comandos
+cd (Aki va el nombre de la carpeta a la que quieres ir)
+cd..             y este es para volver a la carpeta anterior
+*************************
+cuando estes en el directorio para crear el proyecto se utiliza el comando
+
+django-admin.py startproject nombre
+esto crea todo los archivos del proyecto basico
+**************************
+para crear app se utiliza el comando 
+
+django-admin.py startapp nombre
+********************
+para crear un superusuario se utiliza el comando
+
+manage.py createsuperuser
+aki se entra los datos que se soliciten
+****************
+despues de crear nueva aplicaciones, modelos o modificacion de alguno de ellos se debe aplicar los siguientes comando obligados
+
+manage.py migrate            este aplica los modelos en la pagina web o donde se utilizen´
+manage.py makemigrations     este aplica los modelos a la base de datos para crear las estructuras y tablas
+********************************************************************
+PARA CORRER EL PROYECTO
+manage.py runserver
+**********************************************
+
+
+
+
+cuando crea una aplicacion debe tener los siguientes archivos dentro y con los codigos dentro
+__init__.py
+admin.py                   este es el que registra el modelo
+forms.py                   aki se define cuales campos se mostraran en el formulario
+model.py                   aki se crea el modelo
+tests.py                    -
+urls.py                    aki se ponen las urls
+views.py                   aki se escriben las vistas que se van a utilizar
+
+
+
+************************************
+todas la paginas html extienden de base.html en la carpeta core/template/layout/base.html y algunas de la base full-screen en la misma direccion
+en esta se ecuentran todos los metadatos, el link del css, javascript
+y en las paginas individuales se pone el contenido en particular por el que fue creada
