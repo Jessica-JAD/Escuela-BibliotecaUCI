@@ -15,37 +15,47 @@
                         <div class="card-header">
                             <h5>Listado de bibliografías</h5>
                             <div class="float-right">
-                            <div id="ModalLive2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLiveLabel2">Adicionar bibliografía especializada.</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="modal-body">
-                                                <form class="was-validated">
-                                                    <div class="form-group">
-                                                        <label for="message-text2" class="col-form-label">Nombre de la bibliografía especializada:</label>
-                                                        <input class="form-control" id="message-text2" required>
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                                        <label class="custom-file-label" for="validatedCustomFile">Seleccionar documento...</label>
-                                                        <div class="invalid-feedback">Seleccione un documento para enviar</div>
-                                                    </div>
-                                                    </div>
-                                                </form>
+                                <div id="ModalLive2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLiveLabel2">Adicionar bibliografía especializada.</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
-                                            <button type="button" class="btn  btn-primary">Enviar</button>
+                                            <div class="modal-body">
+                                                <div class="modal-body">
+                                                    <form class="was-validated">
+                                                        <div class="form-group">
+                                                            <label for="message-text2" class="col-form-label">Nombre de la bibliografía especializada:</label>
+                                                            <input class="form-control" id="message-text2" required>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                                <label class="custom-file-label" for="validatedCustomFile">Seleccionar documento...</label>
+                                                                <div class="invalid-feedback">Seleccione un documento para enviar</div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn  btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn  btn-primary">Enviar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            <div class="input-group rounded">
+                                    <input type="search" class="form-control" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                                    <span class="input-group-text border-0" id="search-addon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                {% if perms.foo.view_contenttype %}
+                                    <a href="{% url 'crearbibliografia' %}" class="btn btn-primary"><i>Adicionar</i></a>
+                                {% endif %}
+                                </div>
+
+
                             </div>
-                            <a href="{% url 'crearbibliografia' %}" class="btn btn-primary"><i>Adicionar</i></a>
-                        </div>
                         </div>
                         <div class="card-block table-border-style">
                             <div class="table-responsive">
@@ -54,7 +64,9 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Nombre de la bibliografía</th>
-                                        <th>Operaciones</th>
+                                        {% if perms.foo.view_contenttype %}
+                                            <th>Operaciones</th>
+                                        {% endif %}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -63,10 +75,12 @@
                                             <tr>
                                                 <td>{{ e.id }}</td>
                                                 <td>{{ e.titulo }}</td>
-                                                <td>
-                                                    <a href="{% url 'modificarbibliografia' e.id %}" class="btn btn-primary"><i>Modificar</i></a>
-                                                    <a href="{% url 'eliminarbibliografia' e.id %}" class="btn btn-danger"><i>Eliminar</i></a>
-                                                </td>
+                                                {% if perms.foo.view_contenttype %}
+                                                    <td>
+                                                        <a href="{% url 'modificarbibliografia' e.id %}" class="btn btn-primary"><i>Modificar</i></a>
+                                                        <a href="{% url 'eliminarbibliografia' e.id %}" class="btn btn-danger"><i>Eliminar</i></a>
+                                                    </td>
+                                                {% endif %}
                                             </tr>
                                         {% endfor %}
                                     {% else %}

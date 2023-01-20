@@ -1,3 +1,4 @@
+from django.conf.urls import url
 from django.urls import path
 
 from apps.traducciondocumento.sp_traduccionDocumento import CreateTraduccionDocumento,ListTraduccionDocumento,DeleteTraduccionDocumento

@@ -120,12 +120,12 @@ The project is coded using a simple and intuitive structure presented bellow:
    |    |-- authentication/                # Handles auth routes (login and register)
    |    |    |
    |    |    |-- urls.py                   # Define authentication routes  
-   |    |    |-- sp_AdministrarNoticia.py                  # Handles login and registration  
+   |    |    |-- sp_Noticia.py                  # Handles login and registration  
    |    |    |-- forms.py                  # Define auth forms  
    |    |
    |    |-- app/                           # A simple app that serve HTML files
    |         |
-   |         |-- sp_AdministrarNoticia.py                  # Serve HTML pages for authenticated users
+   |         |-- sp_Noticia.py                  # Serve HTML pages for authenticated users
    |         |-- urls.py                   # Define some super simple routes  
    |
    |-- requirements.txt                    # Development modules - SQLite storage

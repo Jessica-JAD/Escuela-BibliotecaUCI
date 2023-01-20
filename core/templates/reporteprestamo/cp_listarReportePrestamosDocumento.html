@@ -13,7 +13,7 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Listado de reportes de prestamos</h5>
+                            <h5>Listado de reportes de préstamos</h5>
                             <div class="float-right">
                             <div id="ModalLive2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -44,8 +44,13 @@
                                     </div>
                                 </div>
                             </div>
+                                <div class="input-group rounded">
+                                    <input type="search" class="form-control" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                                    <span class="input-group-text border-0" id="search-addon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
                             <a href="{% url 'crearreporteprestamo' %}" class="btn btn-primary"><i>Adicionar</i></a>
-                        </div>
+                                </div></div>
                         </div>
                         <div class="card-block table-border-style">
                             <div class="table-responsive">

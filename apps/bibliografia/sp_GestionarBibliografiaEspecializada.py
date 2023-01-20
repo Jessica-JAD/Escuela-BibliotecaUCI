@@ -12,7 +12,7 @@ from apps.bibliografia.models import BibliografiaEsp
 class CreateBibliografia(LoginRequiredMixin,CreateView):
     model = BibliografiaEsp
     form_class = fr_InsertarBibliografiaEspecializada
-    template_name = 'bibliografia/crearbibliografia.html'
+    template_name = 'bibliografia/cp_crearBibliografia.html'
     success_url = reverse_lazy('listarbibliografia')
 
 class ListBibliografia(LoginRequiredMixin,ListView):
@@ -22,11 +22,11 @@ class ListBibliografia(LoginRequiredMixin,ListView):
 
 class UpdateBibliografia(LoginRequiredMixin,UpdateView):
     model = BibliografiaEsp
-    template_name = 'bibliografia/modificarbibliografia.html'
+    template_name = 'bibliografia/cp_modificarBibliografia.html'
     form_class = fr_InsertarBibliografiaEspecializada
     success_url = reverse_lazy('listarbibliografia')
 
 class DeleteBibliografia(LoginRequiredMixin,DeleteView):
     model = BibliografiaEsp
-    template_name = 'bibliografia/eliminarbibliografia.html'
+    template_name = 'bibliografia/cp_eliminarBibliografia.html'
     success_url = reverse_lazy('listarbibliografia')

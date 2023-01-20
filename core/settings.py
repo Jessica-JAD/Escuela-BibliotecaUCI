@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'apps.plataformauniversitaria',
     'apps.asistenciaespecializada',
     'apps.reporteprestamo',
-    'apps.traducciondocumento'
+    'apps.traducciondocumento',
+    'apps.consultatramite'
 ]
 
 MIDDLEWARE = [

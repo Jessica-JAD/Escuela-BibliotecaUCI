@@ -5,22 +5,22 @@ from django.shortcuts import render
 
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
-from apps.noticia.forms import fr_AdministrarNoticia
+from apps.noticia.forms import fr_Noticia
 from apps.noticia.models import Noticia
 
 
 class CreateNoticia(LoginRequiredMixin,CreateView):
     model = Noticia
-    form_class = fr_AdministrarNoticia
-    template_name = 'noticias/crearnoticia.html'
+    form_class = fr_Noticia
+    template_name = 'noticias/cp_crearNoticia.html'
     success_url = reverse_lazy('listarnoticia')
 
 class ListNoticia(LoginRequiredMixin,ListView):
     model = Noticia
     queryset = Noticia.objects.all()
-    template_name = 'noticias/cp_AdministrarNoticia.html'
+    template_name = 'noticias/cp_listarNoticia.html'
 
 class DeleteNoticia(LoginRequiredMixin,DeleteView):
     model = Noticia
-    template_name = 'noticias/eliminarnoticia.html'
+    template_name = 'noticias/cp_eliminarNoticia.html'
     success_url = reverse_lazy('listarnoticia')

@@ -1,4 +1,4 @@
 from django.contrib import admin
-from apps.reporteprestamo.models import ReportePrestamoDocumento
+from apps.reporteprestamo.models import ReportePrestamo
 # Register your models here.
-admin.site.register(ReportePrestamoDocumento)
+admin.site.register(ReportePrestamo)

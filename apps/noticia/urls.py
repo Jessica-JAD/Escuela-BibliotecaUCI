@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.noticia.sp_AdministrarNoticia import CreateNoticia,ListNoticia,DeleteNoticia
+from apps.noticia.sp_Noticia import CreateNoticia,ListNoticia,DeleteNoticia
 
 urlpatterns = [
     path('lnoticia/', ListNoticia.as_view() , name='listarnoticia' ),

@@ -1,7 +1,7 @@
 from django import forms
-from apps.plataformauniversitaria.models import PLATAFORMAU
+from apps.plataformauniversitaria.models import plataformaU
 
-class FORMINSERTAR(forms.ModelForm):
+class fr_InsertarPlataforma(forms.ModelForm):
     class Meta:
-        model = PLATAFORMAU
+        model = plataformaU
         fields = '__all__'

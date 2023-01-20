@@ -46,3 +46,8 @@ views.py                   aki se escriben las vistas que se van a utilizar
 todas la paginas html extienden de base.html en la carpeta core/template/layout/base.html y algunas de la base full-screen en la misma direccion
 en esta se ecuentran todos los metadatos, el link del css, javascript
 y en las paginas individuales se pone el contenido en particular por el que fue creada
+
+
+
+
+python test_mymodule.py 

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.plataformauniversitaria.CC_PLATAFORMA import CreatePlatformaUniversitaria,UpdatePlatformaUniversitaria,ListPlatformaUniversitaria,DeletePlatformaUniversitaria
+from apps.plataformauniversitaria.sp_PlataformaUniversitaria import CreatePlatformaUniversitaria,UpdatePlatformaUniversitaria,ListPlatformaUniversitaria,DeletePlatformaUniversitaria
 
 urlpatterns = [
     path('lplataformauniversitaria/', ListPlatformaUniversitaria.as_view() , name='listarplataformauniversitaria' ),

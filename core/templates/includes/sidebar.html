@@ -4,12 +4,12 @@
     <div class="navbar-wrapper  ">
         <div class="navbar-content scroll-div " >
             <ul class="nav pcoded-inner-navbar ">
-
+                {% if perms.foo.view_contenttype %}
                 <li class="nav-item">
-                <li class="nav-item">
-                    <a href="solicitudservicio.html" class="nav-link "><span class="pcoded-micon">
-						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Solicitud de servicios</span></a>
+                    <a href="{% url 'listarusuario' %}" class="nav-link "><span class="pcoded-micon">
+						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Usuarios</span></a>
                 </li>
+            {% endif %}
                 <li class="nav-item">
                     <a href="{% url 'listarbibliografia' %}" class="nav-link "><span class="pcoded-micon">
 						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Bibliografía especializada</span></a>
@@ -34,13 +34,19 @@
                     <a href="{% url 'listarasistenciaespecializada' %}" class="nav-link "><span class="pcoded-micon">
 						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Asistencia Especializada</span></a>
                 </li>
+                {% if perms.foo.view_contenttype %}
                 <li class="nav-item">
                     <a href="{% url 'listarreporteprestamo' %}" class="nav-link "><span class="pcoded-micon">
-						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Reporte de prestamo</span></a>
+						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Reporte de préstamo</span></a>
                 </li>
+                {% endif %}
                 <li class="nav-item">
                     <a href="{% url 'listartraducciondocumento' %}" class="nav-link "><span class="pcoded-micon">
 						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Traducción de documentos</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'listarconsultatramite' %}" class="nav-link "><span class="pcoded-micon">
+						   <i class="feather icon-file-text"></i></span><span class="pcoded-mtext">Cosulta y Tramite</span></a>
                 </li>
                 <li class="nav-item pcoded-menu-caption"></li>
             </ul>

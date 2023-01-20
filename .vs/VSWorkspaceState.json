@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\apps",
-    "\\core",
-    "\\core\\templates",
-    "\\core\\templates\\adquisiciones",
-    "\\core\\templates\\traducciondocumento"
+    "\\apps"
   ],
   "PreviewInSolutionExplorer": false
 }

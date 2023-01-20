@@ -44,7 +44,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="input-group rounded">
+                                    <input type="search" class="form-control" placeholder="Buscar" aria-label="Search" aria-describedby="search-addon" />
+                                    <span class="input-group-text border-0" id="search-addon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                {% if perms.foo.view_contenttype %}
                             <a href="{% url 'crearadquisicion' %}" class="btn btn-primary"><i>Adicionar</i></a>
+                                {% endif %}
+                            </div>
                         </div>
                         </div>
                         <div class="card-block table-border-style">
@@ -54,7 +62,9 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Título de la adquisición</th>
+                                        {% if perms.foo.view_contenttype %}
                                         <th>Operaciones</th>
+                                        {% endif %}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -63,9 +73,11 @@
                                             <tr>
                                                 <td>{{ e.id }}</td>
                                                 <td>{{ e.nombread    }}</td>
+                                                {% if perms.foo.view_contenttype %}
                                                 <td>
                                                     <a href="{% url 'eliminaradquisicion' e.id %}" class="btn btn-danger"><i>Eliminar</i></a>
                                                 </td>
+                                            {% endif %}
                                             </tr>
                                         {% endfor %}
                                     {% else %}

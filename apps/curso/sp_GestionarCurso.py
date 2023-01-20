@@ -12,7 +12,7 @@ from apps.curso.models import Curso
 class CreateCurso(LoginRequiredMixin,CreateView):
     model = Curso
     form_class = fr_InsertarCurso
-    template_name = 'curso/crearcurso.html'
+    template_name = 'curso/cp_crearCurso.html'
     success_url = reverse_lazy('listarcurso')
 
 class ListCurso(LoginRequiredMixin,ListView):
@@ -22,11 +22,11 @@ class ListCurso(LoginRequiredMixin,ListView):
 
 class UpdateCurso(LoginRequiredMixin,UpdateView):
     model = Curso
-    template_name = 'curso/modificarcurso.html'
+    template_name = 'curso/cp_modificarCurso.html'
     form_class = fr_InsertarCurso
     success_url = reverse_lazy('listarcurso')
 
 class DeleteCurso(LoginRequiredMixin,DeleteView):
     model = Curso
-    template_name = 'curso/eliminarcurso.html'
+    template_name = 'curso/cp_eliminarCurso.html'
     success_url = reverse_lazy('listarcurso')

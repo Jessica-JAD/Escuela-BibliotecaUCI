@@ -25,3 +25,5 @@ class DeleteAdquisicion(LoginRequiredMixin,DeleteView):
     model = Adquisicion
     template_name = 'adquisiciones/eliminaradquisicion.html'
     success_url = reverse_lazy('listaradquisicion')
+
+
